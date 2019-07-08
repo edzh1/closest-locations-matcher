@@ -1,5 +1,29 @@
 # closest-locations-matcher
 
+The speed of the endpoint depends on the locations count (there is a delay to pass API rules), because for this task I'm using the public API (it is possibe to deploy your own server, but it takes time).
+
+This service accepts POST request to the `/location-pairs` endpoint with following data.
+
+```
+{
+	"locations": [
+		{ "lat": 40.6892532, "lon": -74.0445481714432, "name": "The statue of liberty" },
+		{ "lat": 52.516272, "lon": 13.377722, "name": "Brandenburg Gate" },
+		{ "lat": 51.515, "lon": 7.453619, "name": "Leonie-Reygers-Terrasse" }
+	]
+}
+```
+
+For this task I'm using the name of an location to check the existence of this object in the real world via open street map.
+
+### How to run
+```
+docker build -t edzh1/closest-locations-checker .
+docker run -p 80:1337 edzh1/closest-locations-checker
+```
+
+---
+
 This node.js app allows you to perform the following operations:
 
 1. Call an endpoint and pass an array of locations
