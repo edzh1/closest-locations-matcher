@@ -3,12 +3,8 @@
 const express = require('express');
 const router = express.Router();
 
-const locationController = require('../controllers/location');
+const locationController = require('../controllers/location-pairs');
 
-router.post('/', function(req, res, next) {
-  const pairs = locationController.matchLocationsPairs(req.body);
-
-  res.json(pairs);
-});
+router.post('/', locationController.generate);
 
 module.exports = router;
