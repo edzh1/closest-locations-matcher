@@ -16,6 +16,12 @@ This service accepts POST request to the `/location-pairs` endpoint with followi
 
 For this task I'm using the name of an location to check the existence of this object in the real world via open street map.
 
+### How to run
+```
+docker build -t edzh1/closest-locations-checker .
+docker run -p 80:1337 edzh1/closest-locations-checker
+```
+
 ---
 
 This node.js app allows you to perform the following operations:
